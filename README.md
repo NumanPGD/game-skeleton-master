@@ -52,3 +52,21 @@ You can then use the images in the texture cache with the Entity Module:
 ```java
 entityManager.createSprite.setImage("background.jpg");
 ```
+
+## Inventory system
+
+The skeleton now provides a simple inventory that can store items. An `Item`
+has a weight, value and quality. A `Player` owns an `Inventory` and exposes
+convenience methods to pick up, drop, modify and sell items. Each inventory has
+a limited weight capacity; attempting to pick up an item that would exceed this
+limit will fail.
+
+```java
+Player player = gameManager.getPlayer(0);
+Item sword = new Item("Sword", 3, 10, 100);
+if (player.pickUp(sword)) {
+    System.out.println("Picked up sword!");
+}
+player.sell(sword); // adds the item value to the player's gold
+int gold = player.getGold();
+```
