@@ -8,6 +8,7 @@ import com.codingame.gameengine.core.AbstractMultiplayerPlayer;
 // public class Player extends AbstractSoloPlayer {
 public class Player extends AbstractMultiplayerPlayer {
     private final Inventory inventory = new Inventory();
+    private Item offeredItem;
 
     @Override
     public int getExpectedOutputLines() {
@@ -25,6 +26,14 @@ public class Player extends AbstractMultiplayerPlayer {
 
     public boolean drop(Item item) {
         return inventory.drop(item);
+    }
+
+    public void setOfferedItem(Item item) {
+        this.offeredItem = item;
+    }
+
+    public Item getOfferedItem() {
+        return offeredItem;
     }
 
     public void modifyItem(Item item, int weight, int value, int quality) {
