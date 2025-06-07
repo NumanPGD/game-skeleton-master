@@ -70,3 +70,22 @@ if (player.pickUp(sword)) {
 player.sell(sword); // adds the item value to the player's gold
 int gold = player.getGold();
 ```
+
+## Running the prototype
+
+To try the sample game locally on macOS:
+
+1. Install a JDK (Java 8 or later) and Maven. Using Homebrew you can run:
+
+   ```bash
+   brew install maven
+   ```
+
+2. Compile and launch the game from the project directory:
+
+   ```bash
+   mvn compile
+   mvn exec:java
+   ```
+
+The game runner will start and execute `Agent1` and `Agent2` with the referee logic.
